@@ -92,7 +92,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
 .image-section > .wrap,.image-section > .register-wrap { position: relative; z-index: 1; min-width: 0; }
 .intro-grid > *, .round-grid > *, .schedule-layout > *, .people-grid > *, .register-columns > * { min-width: 0; }
 
-.site-header { position: absolute; z-index: 20; inset: 0 0 auto; height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; width: min(1320px, calc(100% - 64px)); margin: auto; border-bottom: 1px solid rgba(48,59,49,.75); }
+.site-header { position: absolute; z-index: 20; inset: 0 0 auto; height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; padding-inline: clamp(24px, 4vw, 64px); margin: 0; border-bottom: 1px solid rgba(48,59,49,.75); }
 .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; min-width: max-content; }
 .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--phosphor); color: var(--phosphor); position: relative; transform: rotate(45deg); }
 .brand-mark::before { content: ""; position: absolute; inset: 4px; border: 1px solid rgba(120,134,106,.35); }
@@ -100,7 +100,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
 .brand-type { display: flex; flex-direction: column; line-height: 1.15; }
 .brand-type strong { font: 700 19px var(--display); letter-spacing: .09em; }
 .brand-type small { color: var(--steel); font: 10px var(--mono); letter-spacing: .11em; margin-top: 4px; }
-.desktop-nav { display: flex; align-items: center; gap: clamp(15px,2.4vw,32px); }
+.desktop-nav { display: flex; align-items: center; justify-content: space-between; gap: 0; width: calc(50% - 150px); margin-left: 40px; margin-right: auto; }
 .desktop-nav a, .nav-cta { text-decoration: none; text-transform: uppercase; font: 600 10px var(--mono); letter-spacing: .08em; }
 .desktop-nav a { color: var(--steel); transition: color .2s ease; }
 .desktop-nav a:hover { color: var(--phosphor); }
@@ -400,7 +400,7 @@ h2 span { color: var(--steel); }
 @keyframes page-enter { from { opacity: .55; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes route-sweep { 0% { transform: translateX(-110%); } 55% { transform: translateX(0); } 100% { transform: translateX(110%); } }
 @media (max-width: 940px) {
-  .site-header { position: sticky; top: 0; height: 72px; width: calc(100% - 32px); background: rgba(11,15,13,.91); backdrop-filter: blur(16px); border-bottom-color: rgba(48,59,49,.92); }.desktop-nav { display: none; }.mobile-nav { display: block; }.desktop-nav a { font-size: 10px; }
+  .site-header { position: sticky; top: 0; height: 80px; width: 100%; padding-inline: 16px; background: rgba(11,15,13,.91); backdrop-filter: blur(16px); border-bottom-color: rgba(48,59,49,.92); }.desktop-nav { display: none; }.mobile-nav { display: block; }.desktop-nav a { font-size: 10px; }
   html { scroll-padding-top: 76px; }
   .register-page { padding-top: 64px; }
   .hero { min-height: 740px; }
@@ -1068,9 +1068,10 @@ h2 span { color: var(--text-2); }
 
 /* ---- buttons / nav: Barlow Condensed labels ---- */
 .button, .text-link, .nav-cta { font: 600 14px/1 var(--display); letter-spacing: .14em; }
-.nav-cta { font-size: 13px; }
-.desktop-nav a { font: 600 15px/1 var(--display); letter-spacing: .12em; color: var(--text-2); }
-.mobile-nav nav a { font: 600 16px/1 var(--display); letter-spacing: .12em; color: var(--text-2); }
+.nav-cta { font: 800 15px/1 var(--display); letter-spacing: .14em; }
+@media (min-width: 941px) { .nav-cta { margin-right: 110px; } }
+.desktop-nav a { font: 800 19px/1 var(--display); letter-spacing: .12em; color: var(--text); }
+.mobile-nav nav a { font: 800 19px/1 var(--display); letter-spacing: .12em; color: var(--text); }
 .back-link, .register-return a, .footer-meta a { font: 600 14px/1.2 var(--display); letter-spacing: .12em; text-transform: uppercase; }
 .back-link { color: var(--text-2); }
 .footer-meta a, .register-return a { color: var(--text); }
